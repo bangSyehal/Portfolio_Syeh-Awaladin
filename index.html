@@ -114,7 +114,16 @@
       margin-bottom:10px;
     }
 
-    .hero p{color:var(--muted); font-size:15.5px; line-height:1.7; margin-bottom:18px; max-width:680px}
+   .hero p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 100%;              /* ✅ biar gak melampaui container */
+  word-wrap: break-word;        /* ✅ pecah kata panjang */
+  overflow-wrap: break-word;    /* ✅ versi modern */
+  box-sizing: border-box;       /* ✅ hitung padding di dalam lebar */
+}
 
     /* avatar (corner small) */
     .avatar-small{
@@ -282,6 +291,23 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 1rem;           /* beri ruang kiri-kanan */
+    text-align: center;        /* teks lebih enak dibaca di HP */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+}
+	  
     @media (max-width:420px){
       .gallery-grid{grid-template-columns:1fr}
       .avatar-small{display:none}
@@ -850,4 +876,5 @@ function closeLightbox() {
 </body>
 
 </html>
+
 
