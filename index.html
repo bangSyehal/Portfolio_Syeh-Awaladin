@@ -20,7 +20,7 @@
       --glass: rgba(76,116,236,0.08);
       --radius: 16px;
       --shadow: 0 10px 30px rgba(16,24,40,0.06);
-      --sidebar-width: 72px; /* ✅ Dikecilkan dari 96px */
+      --sidebar-width: 72px; 
     }
 
     *{box-sizing:border-box}
@@ -28,10 +28,8 @@
     a{color:inherit}
     img{max-width:100%;display:block}
 
-    /* Layout */
     .container{display:flex;min-height:100vh;gap:40px;}
-
-    /* ✅ SIDEBAR (left) lebih kecil */
+	  
     .sidebar{
       position:fixed;
       left:20px;
@@ -45,8 +43,8 @@
       z-index:120;
     }
     .sidebar .item{
-      width:58px; /* dari 70px */
-      height:58px; /* dari 70px */
+      width:58px; 
+      height:58px;
       background:var(--card);
       border-radius:14px;
       display:flex;
@@ -62,14 +60,13 @@
     .sidebar .item.active{background:linear-gradient(180deg,var(--primary),#2fb0ff); color:#fff; transform:translateY(-5px); box-shadow:0 10px 28px rgba(76,116,236,0.18)}
     .sidebar .item:hover{transform:translateY(-3px); color:var(--primary)}
 
-    /* MAIN content area */
+   
     main{
       margin-left: calc(var(--sidebar-width) + 50px);
       width:calc(100% - (var(--sidebar-width) + 80px));
       padding:40px 60px;
     }
 
-    /* HERO */
     .hero{
       background: var(--card);
       border-radius: var(--radius);
@@ -82,7 +79,6 @@
       overflow:hidden;
     }
 
-    /* subtle logistics ornaments (outline svgs) */
     .ornaments{
       position:absolute;
       inset:0;
@@ -119,13 +115,13 @@
   font-size: 15.5px;
   line-height: 1.7;
   margin-bottom: 18px;
-  max-width: 100%;              /* ✅ biar gak melampaui container */
-  word-wrap: break-word;        /* ✅ pecah kata panjang */
-  overflow-wrap: break-word;    /* ✅ versi modern */
-  box-sizing: border-box;       /* ✅ hitung padding di dalam lebar */
+  max-width: 100%;           
+  word-wrap: break-word;     
+  overflow-wrap: break-word;   
+  box-sizing: border-box;     
 }
 
-    /* avatar (corner small) */
+ 
     .avatar-small{
       position:absolute;
       top:12px;
@@ -142,8 +138,6 @@
     .btn.secondary{background:transparent;color:var(--primary);border:1px solid rgba(76,116,236,0.12)}
     .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(16,24,40,0.04)}
     .btn.small{padding:8px 10px;font-size:14px;border-radius:8px}
-
-    /* Download CV small */
     .download-cv{background:linear-gradient(90deg,var(--primary),#2fb0ff);}
 
     .profile-card{
@@ -152,7 +146,6 @@
     }
     .profile-card img{width:100%;height:100%;object-fit:cover}
 
-    /* SECTIONS general */
     section.card{
       margin-top:36px;
       background:var(--card);
@@ -168,33 +161,28 @@
     .timeline-item h4{margin:0;color:var(--primary);font-size:18px}
     .timeline-item p{margin:6px 0 0 0;color:var(--muted)}
 
-    /* Tools grid */
     .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:18px}
     .tool{
       background:linear-gradient(180deg,#fafcff,#f4f8ff);
       border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(16,24,40,0.03)
     }
     .tool img{width:48px;height:48px;object-fit:contain}
-
-    /* Gallery */
+	  
     .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;transition:transform .25s ease}
     .gallery-grid img:hover{transform:scale(1.03)}
 
-    /* Contact form */
     .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:26px}
     .form-control{display:flex;flex-direction:column;gap:8px}
     input[type="text"], input[type="email"], textarea{
       padding:12px;border-radius:10px;border:1px solid rgba(16,24,40,0.06);font-size:15px
     }
     textarea{min-height:140px;resize:vertical}
-
-    /* audio controls */
+	  
     .audio-controls{display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,#fff,#f7f9ff);padding:10px;border-radius:12px;box-shadow:0 8px 24px rgba(16,24,40,0.06)}
     .audio-controls button{border:none;background:transparent;font-size:16px;cursor:pointer}
     .volume-range{width:140px}
-
-    /* responsiveness */
+	  
    @media (max-width:1100px){
   main {
     margin-left: 0;
@@ -236,12 +224,10 @@
 }
 
 @media (max-width:820px) {
-  /* === Hilangkan sidebar di HP & tablet kecil === */
   .sidebar {
     display: none;
   }
 
-  /* === Atur hero biar tetap proporsional === */
   .hero {
     flex-direction: column-reverse;
     text-align: center;
@@ -259,7 +245,6 @@
     width: 100%;
   }
 
-  /* === Tombol di hero rapi di HP === */
   .hero-cta {
     justify-content: center;
     align-items: center;
@@ -296,8 +281,8 @@
   .hero p {
     font-size: 14px;
     line-height: 1.6;
-    padding: 0 1rem;           /* beri ruang kiri-kanan */
-    text-align: center;        /* teks lebih enak dibaca di HP */
+    padding: 0 1rem;          
+    text-align: center;       
   }
 }
 
@@ -313,11 +298,10 @@
       .avatar-small{display:none}
     }
 
-    /* reveal */
+
     .reveal{opacity:0;transform:translateY(14px);transition:all .7s cubic-bezier(.22,.9,.31,1)}
     .reveal.show{opacity:1;transform:none}
 
-/* === LIGHTBOX UNTUK PREVIEW GAMBAR === */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -355,8 +339,6 @@
   </style>
 </head>
 <body>
-
-  <!-- ===== SIDEBAR (left) ===== -->
   <div class="sidebar" aria-hidden="false">
     <a href="#home" class="item active" data-target="home" title="Home">
       <i class="fa fa-home" style="font-size:20px"></i>
@@ -387,32 +369,24 @@
     </a>
   </div>
 
-  <!-- ===== MAIN CONTENT (space for sidebar) ===== -->
   <main>
-
-    <!-- ===== HERO ===== -->
     <section id="home" class="hero reveal">
-      <!-- ornaments SVG (logistics-themed, outline, subtle) -->
       <div class="ornaments" aria-hidden="true">
-        <!-- Crane -->
         <svg class="orn-crane" viewBox="0 0 200 160" preserveAspectRatio="xMinYMin slice">
           <path d="M6 150 L6 40 L130 40" />
           <path d="M60 40 L60 10 L80 10" />
           <path d="M60 40 L120 40 L120 80 L80 80" />
         </svg>
-        <!-- Ship -->
         <svg class="orn-ship" viewBox="0 0 240 120" preserveAspectRatio="xMinYMin slice">
           <path d="M10 90 L50 60 L210 60 L230 90 Z" />
           <path d="M40 60 L40 30 L70 30 L70 60" />
         </svg>
-        <!-- Truck (left) -->
         <svg class="orn-lead" viewBox="0 0 220 140" preserveAspectRatio="xMinYMin slice">
           <path d="M10 90 L150 90 L170 70 L200 70" />
           <path d="M150 90 L150 50 L30 50 L30 90" />
           <circle cx="60" cy="95" r="6" />
           <circle cx="140" cy="95" r="6" />
         </svg>
-        <!-- Plane (bottom right) -->
         <svg class="orn-plane" viewBox="0 0 220 120" preserveAspectRatio="xMinYMin slice">
           <path d="M10 50 L70 60 L100 40 L140 48 L200 30" />
         </svg>
@@ -428,51 +402,35 @@
           <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kmp.syehal@gmail.com"><i class="fa fa-envelope"></i> Email</a>
           <a class="btn secondary" href="https://linkedin.com/in/syehal" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a class="btn secondary" href="https://s.id/syehal" target="_blank"><i class="fa fa-link"></i> Microsite</a>
-
-          <!-- Download CV -->
-          <!-- 🔧 GANTI: ganti href ke file CV kamu (PDF) -->
           <a class="btn download-cv" href="https://drive.google.com/uc?export=download&id=1gJyhf4C_BZOpcZzHHqcl8XR9joJl6zn8" download><i class="fa fa-download"></i> Download CV</a>
         </div>
-
-        <!-- Audio controls (autoplay muted initially) -->
         <div style="margin-top:16px" class="audio-controls">
-          <!-- 🔧 GANTI: URL audio default (mp3) jika mau ganti -->
           <audio id="bg-audio" loop preload="auto">
             <source src="music.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
-
           <button id="audio-toggle" aria-label="Play music" title="Play / Pause">
             <i id="audio-icon" class="fa fa-play" style="color:var(--primary);font-size:18px"></i>
           </button>
-
           <div style="display:flex;align-items:center;gap:8px">
             <label style="font-size:13px;color:var(--muted)">Volume</label>
             <input id="audio-volume" class="volume-range" type="range" min="0" max="100" value="60" aria-label="volume">
           </div>
-
           <button id="audio-unmute" class="btn small" title="Unmute (enable sound autoplay if browser allows)" style="color:var(--primary);font-size:13px" >
             Unmute
           </button>
         </div>
-
       </div>
-
       <div class="hero-right">
         <div class="profile-card">
-          <!-- 🔧 GANTI: URL foto profil besar -->
           <img src="Profile.jpeg" alt="Profile photo">
         </div>
       </div>
     </section>
-
-    <!-- ===== ABOUT ===== -->
     <section id="about" class="card reveal">
       <h2>About Me</h2>
       <p>I am a Logistics Management graduate with a strong academic foundation (GPA 3.57/4.00) and hands-on internship experience at PT Kereta Api Indonesia (Persero) and PERUM BULOG. I am skilled in ERP systems (SAP & Odoo), warehouse operations, inventory control, and data-driven operations. I enjoy designing practical user interfaces for logistics workflows and learning new tools to increase operational efficiency.</p>
     </section>
-
-    <!-- ===== EDUCATION & ORGANIZATION ===== -->
     <section id="education" class="card reveal">
       <h2>Education & Organization</h2>
       <div class="two-col">
@@ -492,9 +450,8 @@
         </div>
       </div>
     </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience" class="card reveal">
+   
+	  <section id="experience" class="card reveal">
       <h2>Experience</h2>
 
       <div class="timeline-item">
@@ -521,8 +478,7 @@
         <p class="muted">Assisted 300+ students in ICT practicums, developed digital practicum modules, and supported system development projects.</p>
       </div>
     </section>
-
-    <!-- ===== PROJECT ===== -->
+	  
     <section id="project" class="card reveal">
       <h2>Project — Railway Luggage Monitoring System</h2>
       <div class="two-col">
@@ -540,7 +496,6 @@
       </div>
     </section>
 
-    <!-- ===== ACHIEVEMENTS & CERTIFICATES ===== -->
 <section id="achievements" class="card reveal">
   <h2>Achievements & Certifications</h2>
 
@@ -554,9 +509,7 @@
         <li>🏅 <strong>Best Planner Award</strong> — Business Plan Competition (2024)</li>
       </ul>
 
-      <!-- 🎓 Certificate Gallery -->
       <div class="cert-gallery" style="margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;">
-        <!-- 🔧 GANTI: URL gambar sertifikat kamu -->
         <div class="cert-item" style="border-radius:12px; overflow:hidden; box-shadow:0 6px 16px rgba(16,24,40,0.06); transition:transform .25s ease, box-shadow .25s ease; background:#fff;">
           <img src="toefl.png" alt="TOEFL Certificate" style="width:100%; height:auto; object-fit:contain; cursor:pointer;" onclick="openLightbox(this.src)">
           <div style="padding:10px 12px; font-size:14px; color:var(--muted); text-align:center;">TOEFL Certificate</div>
@@ -594,12 +547,9 @@
   </div>
 </section>
 
-
-    <!-- ===== TOOLS ===== -->
     <section id="tools" class="card reveal">
       <h2>Tools I Use</h2>
       <div class="tools-grid" style="margin-top:16px">
-        <!-- Using public logos; replace if you have local icons -->
         <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP"><div style="color:var(--text-dark);font-weight:600">SAP</div></div>
         <div class="tool"><img src="odoo.png" alt="Odoo"><div style="color:var(--text-dark);font-weight:600">Odoo</div></div>
         <div class="tool"><img src="office.png" alt="Office"><div style="color:var(--text-dark);font-weight:600">MS Office</div></div>
@@ -611,12 +561,10 @@
         <div class="tool"><img src="AnyLogic.png" alt="AnyLogic"><div style="color:var(--text-dark);font-weight:600">AnyLogic</div></div>
       </div>
     </section>
-
-    <!-- ===== GALLERY ===== -->
+	  
     <section id="gallery" class="card reveal">
       <h2>Activities & Moments</h2>
       <div class="gallery-grid" style="margin-top:14px">
-        <!-- 🔧 GANTI: gunakan foto kegiatanmu sendiri di sini -->
         <img src="pic1.jpg" alt="activity">
         <img src="pic2.jpg" alt="activity">
         <img src="pic3.jpg" alt="activity">
@@ -628,17 +576,11 @@
         <img src="pic9.jpg" alt="activity">
       </div>
     </section>
-
-    <!-- ===== CONTACT ===== -->
     <section id="contact" class="card reveal">
       <h2>Contact Me</h2>
       <div class="contact-grid" style="margin-top:12px">
         <div>
-          <!-- Contact form using formsubmit.co (no backend needed) -->
-          <!-- 🔧 GANTI: ganti action URL di bawah ke formsubmit dengan email tujuanmu:
-               Go to https://formsubmit.co/ and get your form action URL or replace with your backend endpoint -->
          <form action="https://formsubmit.co/kmp.syehal@gmail.com" method="POST" />
-            <!-- Protect with captcha or honeypot on production if desired -->
             <div class="form-control">
               <label for="name">Name</label>
               <input id="name" type="text" name="name" required placeholder="Your name">
@@ -651,16 +593,11 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
             </div>
-
-            <!-- optional: include a hidden input to set email subject -->
             <input type="hidden" name="_subject" value="New contact from portfolio website">
 
             <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
               <button type="submit" class="btn">
 				<i class="fa-solid fa-envelope" style="color:#FFFFFF"></i> Send via Email </button>
-
-              <!-- WhatsApp send button -->
-              <!-- 🔧 GANTI: ganti nomor WA di bawah (format internasional, tanpa '+', e.g. 628123456789) -->
               <button type="button" id="wa-send" class="btn secondary">
               <i class="fab fa-whatsapp" style="color:#25D366"></i> Send via WhatsApp
               </button>
@@ -683,15 +620,12 @@
     </section>
   </main>
 
-	<!-- LIGHTBOX PREVIEW -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close" onclick="closeLightbox()">×</span>
   <img id="lightbox-img" src="" alt="Preview">
 </div>
-	
-  <!-- ===== SCRIPTS (typing, reveal, nav, audio, wa) ===== -->
-  <script>
-    /* ============ Typing effect (rotate phrases) ============ */
+
+	<script>
     (function(){
       const phrases = ["Logisticians","UI Design Enthusiast","Tech Learner"];
       const el = document.getElementById('typed');
@@ -724,7 +658,7 @@
       tick();
     })();
 
-    /* ============ Reveal on scroll ============ */
+
     (function(){
       const reveals = document.querySelectorAll('.reveal');
       const onScroll = ()=> {
@@ -737,7 +671,6 @@
       window.addEventListener('scroll', onScroll);
     })();
 
-    /* ============ Sidebar nav active + smooth scroll ============ */
     (function(){
       const links = document.querySelectorAll('.sidebar .item');
       links.forEach(link=>{
@@ -751,7 +684,6 @@
         });
       });
 
-      // highlight while scrolling
       const sections = document.querySelectorAll('main section');
       window.addEventListener('scroll', ()=>{
         let current = '';
@@ -767,7 +699,6 @@
       });
     })();
 
-    /* ============ Audio controls (autoplay muted by default) ============ */
     (function(){
       const audio = document.getElementById('bg-audio');
       const btn = document.getElementById('audio-toggle');
@@ -775,7 +706,6 @@
       const vol = document.getElementById('audio-volume');
       const unmuteBtn = document.getElementById('audio-unmute');
 
-      // Start muted autoplay (most browsers require user interaction to enable sound)
       audio.volume = vol.value / 100;
       audio.muted = true;
       audio.play().catch(()=>{ /* autoplay blocked; still fine */ });
@@ -809,22 +739,18 @@
         audio.volume = vol.value / 100;
       });
 
-      // reflect initial state
       updateIcon();
     })();
 
-  /* ============ WhatsApp send from form ============ */
 (function(){
   const waBtn = document.getElementById('wa-send');
   const form = document.getElementById('contact-form');
 
   waBtn.addEventListener('click', (e) => {
-    // ambil data dari form
     const name = document.getElementById('name').value || 'Tanpa nama';
     const email = document.getElementById('email').value || 'Tidak disebutkan';
     const message = document.getElementById('message').value || '-';
 
-    // Format pesan WhatsApp yang lebih profesional
     const text = 
 ` *Pesan dari Website Portfolio*
 ──────────────────────
@@ -837,14 +763,13 @@ ${message}
 ──────────────────────
 Dikirim melalui website portfolio.`;
 
-    // Nomor WhatsApp kamu (format internasional tanpa '+')
+    
     const nomorWA = '6288806908929';
     const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   });
 })();
 
-    /* ============ Helper: show which elements are editable in console ============ */
     (function(){
       console.info('🔧 Editable placeholders in this file:');
       console.info(' - Avatar big/small images (search for "🔧 GANTI: URL foto").');
@@ -854,7 +779,6 @@ Dikirim melalui website portfolio.`;
       console.info(' - WhatsApp number (search for "🔧 GANTI: ganti nomor WA").');
     })();
 	  
-	/* === Lightbox Preview untuk Certificate === */
 function openLightbox(src) {
   const lightbox = document.getElementById('lightbox');
   const img = document.getElementById('lightbox-img');
@@ -870,6 +794,7 @@ function closeLightbox() {
 </body>
 
 </html>
+
 
 
 
